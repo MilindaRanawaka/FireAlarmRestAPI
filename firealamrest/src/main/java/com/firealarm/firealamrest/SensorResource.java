@@ -31,11 +31,16 @@ public class SensorResource {
 	
 	@POST
 	@Path("sensor")
-	public Sensor addSensor(Sensor s) {
-		
-		System.out.println(s);
+	public Sensor addSensor(Sensor s) {		
 		sensorRepo.createSensor(s);
 		
+		return s;
+	}
+	
+	@PUT
+	@Path("data")
+	public Sensor updateSensorData(Sensor s) {
+		sensorRepo.updateData(s);
 		return s;
 	}
 
