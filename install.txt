@@ -1,0 +1,15 @@
+=======Installation Document=======
+
+To install Fire Alarm System,
+
+01. Execute fireAlarmAPIDB.sql in mysql
+02. open firealamrest in Eclipse
+03. to create database connectivity edit line 19, 20, 21 in SensorRepository class of firealamrest project
+  In line 19 make sure mqsql server also runs in localhost:3307 or edit the port address
+	In line 20 and 21 edit username and password as in your database
+04. Right Click the firealamrest and Run As => Run on Server
+05. open SensorUpdateApp in Eclipse
+06. Right Click the SensorUpdateApp and Run As => Java Application
+07. open firealarmweb
+08. run npm install command to install all dependencies
+09. run npm start command to start web application
