@@ -116,8 +116,23 @@ public class SensorRepository {
 		}
 		catch(Exception e) {
 			System.out.println(e);
+		}		
+	}
+	
+	public void updateSensor(Sensor s) {
+		String sql = "UPDATE sensors SET sensorStatus=?, sensorLocationFloorNo=?, sensorLocationRoomNo=? WHERE sensorID=?";
+		
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setBoolean(1, s.isSensorStatus());
+			st.setString(2, s.getSensorLocationFloorNo());
+			st.setString(3, s.getSensorLocationRoomNo());
+			st.setInt(4, s.getSensorID());
+			
+			st.executeUpdate();
 		}
-		
-		
+		catch(Exception e) {
+			System.out.println(e);
+		}
 	}
 }

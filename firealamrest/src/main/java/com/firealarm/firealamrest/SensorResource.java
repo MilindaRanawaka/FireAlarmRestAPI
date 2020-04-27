@@ -43,5 +43,12 @@ public class SensorResource {
 		sensorRepo.updateData(s);
 		return s;
 	}
+	
+	@PUT
+	@Path("update")
+	public Sensor updateSensor(Sensor s) {
+		sensorRepo.updateSensor(s);
+		return s;
+	}
 
 }
