@@ -59,8 +59,8 @@ public class MainClass {
 	}
 	
 	public static void sendMail(String sendMail,String floor, String room) {
-		final String username = "milindaranawaka2@gmail.com";
-        final String password = "660_don't_forget_your_password_3675";
+		final String username = "your@gmail.com";
+        final String password = "####";
 
         Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -79,7 +79,7 @@ public class MainClass {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("milindaranawaka2@gmail.com"));
+            message.setFrom(new InternetAddress(username));
             message.setRecipients(
                     Message.RecipientType.TO,
                     InternetAddress.parse(sendMail)
