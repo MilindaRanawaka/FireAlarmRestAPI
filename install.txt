@@ -16,4 +16,5 @@ To install Fire Alarm System,
 10. open SendEmail in Eclipse
 11. as step 03 make sure in MainClass.java file line 26, 27, 28 are same as mysql database
 12. To line 62 and 63 give email account username and email acoount password
+	Make sure that account Less Secure app access is on. url: https://myaccount.google.com/lesssecureapps
 12. Run MainClass as Java Application
