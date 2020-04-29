@@ -2,6 +2,7 @@ package com.firealarm.firealamrest;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+//Class of a sensor
 @XmlRootElement
 public class Sensor {
 	

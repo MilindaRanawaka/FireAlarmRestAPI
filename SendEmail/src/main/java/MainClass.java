@@ -21,6 +21,7 @@ public class MainClass {
 	private static HttpURLConnection conn;
 	private static Connection sqlConn;
 	
+	//Get Admin Details
 	public static ArrayList<String> getInfo() {
 		
 		String url = "jdbc:mysql://localhost:3307/fireAlarmAPI";
@@ -58,6 +59,7 @@ public class MainClass {
 		return strArr;	
 	}
 	
+	//To send email to relevant Admin
 	public static void sendMail(String sendMail,String floor, String room) {
 		final String username = "your@gmail.com";
         final String password = "####";
@@ -97,6 +99,7 @@ public class MainClass {
         }
 	}
 	
+	//Get Sensor details and check co2 or smoke level is greater than 5
 	public static void getList() {
 		BufferedReader reader;
 		String line;
@@ -147,6 +150,7 @@ public class MainClass {
 	}
 
 	public static void main(String[] args) {
+		//calling this every 5 second
 		while(true) {
 			getList();
 			try {

@@ -4,20 +4,25 @@ import './App.css';
 import Countdown from "react-countdown";
 
 export default class DataFetch extends React.Component{
+
+  //Declare count down,  Sensor data and loading status
   state = {
     loading: true,
     sensor: null,
     seconds: 40
   };
 
+  //Update countdown
   tick() {
     this.setState(state => ({
       seconds: state.seconds - 1
     }));
   }
 
+  //Get data
   async componentDidMount(){
 
+    //Get data for first loading
     const url = "http://localhost:8080/firealamrest/webresources/sensors";
 
     const response = await fetch(url);
@@ -31,6 +36,7 @@ export default class DataFetch extends React.Component{
 
     this.interval = setInterval(() => this.tick(), 1000);
 
+    //Update data every 40 seconds
     try {
       setInterval(async () => {
         const url = "http://localhost:8080/firealamrest/webresources/sensors";
@@ -52,10 +58,13 @@ export default class DataFetch extends React.Component{
     }
   }
 
+  //To update countdown
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
+  //HTML coding and jsx events
+  //Styling using Bootstrap
   render() {
     const renderer = ({ seconds }) => {
       return <span>{seconds}</span>;

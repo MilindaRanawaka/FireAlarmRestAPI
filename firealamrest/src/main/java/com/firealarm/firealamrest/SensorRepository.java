@@ -13,6 +13,7 @@ public class SensorRepository {
 	
 	Connection con = null;
 	
+	//DB Connection
 	public SensorRepository() {
 		
 		//TODO : Make sure line 19, 20, 21 port Username and PWD same with your computer
@@ -29,7 +30,7 @@ public class SensorRepository {
 		}
 	}
 	
-	
+	//To get all sensor information from DB
 	public ArrayList<Sensor> getSensors() {	
 		
 		ArrayList<Sensor> sensors = new ArrayList<Sensor>();
@@ -59,6 +60,7 @@ public class SensorRepository {
 		return sensors;	
 	}
 	
+	//To get sensor details of specific sensor details from DB
 	public Sensor getSensor(int id) {
 		String sql = "select * from sensors where sensorID ="+id;
 		Sensor s = new Sensor();
@@ -84,6 +86,7 @@ public class SensorRepository {
 	}
 
 
+	//To add new sensor to DB
 	public void createSensor(Sensor s) {
 		String sql = "insert into sensors(sensorStatus,sensorLocationFloorNo,sensorLocationRoomNo,smokeLevel,co2Level) values(?,?,?,?,?)";
 		
@@ -102,6 +105,7 @@ public class SensorRepository {
 	}
 
 
+	//To Update smoke and co2 level details of a sensor in DB
 	public void updateData(Sensor s) {
 		
 		String sql = "UPDATE sensors SET smokeLevel=?, co2Level=? WHERE sensorID=?";
@@ -119,6 +123,7 @@ public class SensorRepository {
 		}		
 	}
 	
+	//To update sensor status sensor floor no and room no in DB
 	public void updateSensor(Sensor s) {
 		String sql = "UPDATE sensors SET sensorStatus=?, sensorLocationFloorNo=?, sensorLocationRoomNo=? WHERE sensorID=?";
 		

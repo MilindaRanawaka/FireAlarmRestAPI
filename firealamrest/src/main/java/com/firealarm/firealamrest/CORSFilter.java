@@ -5,6 +5,8 @@ import com.sun.jersey.spi.container.ContainerResponse;
 import com.sun.jersey.spi.container.ContainerResponseFilter;
 
 public class CORSFilter implements ContainerResponseFilter {
+	
+	//used to modify header of the code to access API
     @Override
     public ContainerResponse filter(ContainerRequest request,
             ContainerResponse response) {

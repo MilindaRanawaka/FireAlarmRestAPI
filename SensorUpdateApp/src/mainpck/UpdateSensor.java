@@ -11,9 +11,11 @@ import java.util.Random;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//Update Sensor data
 public class UpdateSensor {
 	private static HttpURLConnection conn;
 	
+	//Generate Random Number
 	public static int getRandom() {
 		Random random = new Random();
 		int rand = 0;
@@ -22,6 +24,7 @@ public class UpdateSensor {
 		    if(rand !=0) break;
 		}
 		
+		//Generate Random number with probability
 		if (rand <= 1) {
 			return 10;
 		} else if (rand <= 3) {
@@ -46,6 +49,7 @@ public class UpdateSensor {
 		}
 	}
 	
+	//To get all Sensor List
 	public static void getList() {
 		BufferedReader reader;
 		String line;
@@ -94,6 +98,7 @@ public class UpdateSensor {
 		}
 	}
 	
+	//This method will update Sensor data (co2 level and smoke level)
 	public static void replaceSensorData(int sensorID) {
 		BufferedReader reader;
 		String line;
@@ -142,6 +147,8 @@ public class UpdateSensor {
 	
 	
 	public static void main(String[] args) {
+		
+		//Calling getList every 10 second
 		while(true) {
 			getList();
 			try {

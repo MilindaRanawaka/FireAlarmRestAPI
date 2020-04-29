@@ -10,11 +10,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+//This runs in side /webresources
+// url url would be http://localhost:8080/firealamrest/webresources/
 @Path("sensors")
 public class SensorResource {
 	
 	SensorRepository sensorRepo = new SensorRepository();
 	
+	//To get all sensors details
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<Sensor> getSensors() {
@@ -22,6 +25,7 @@ public class SensorResource {
 		return sensorRepo.getSensors();
 	}
 	
+	//To get specific sensor details
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -29,6 +33,7 @@ public class SensorResource {
 		return sensorRepo.getSensor(id);
 	}
 	
+	//To add a sensor
 	@POST
 	@Path("sensor")
 	public Sensor addSensor(Sensor s) {		
@@ -37,6 +42,7 @@ public class SensorResource {
 		return s;
 	}
 	
+	//To update sensor co2 and smoke level
 	@PUT
 	@Path("data")
 	public Sensor updateSensorData(Sensor s) {
@@ -44,6 +50,7 @@ public class SensorResource {
 		return s;
 	}
 	
+	//To update sensor status and floor number and room no
 	@PUT
 	@Path("update")
 	public Sensor updateSensor(Sensor s) {
