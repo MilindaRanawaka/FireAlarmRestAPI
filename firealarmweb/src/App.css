@@ -1,0 +1,15 @@
+.fa-circle{
+  font-size: 13px;
+}
+
+.circle-active{
+  color: forestgreen;
+}
+
+.circle-deactivate{
+  color: darkred;
+}
+
+.our-card{
+  margin: 50px 30px 10px;
+}
