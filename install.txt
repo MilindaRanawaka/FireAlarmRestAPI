@@ -12,10 +12,13 @@ To install Fire Alarm System,
 05. open SensorUpdateApp in Eclipse
 06. Right Click the SensorUpdateApp and Run As => Java Application
 07. open firealarmweb
-08. run npm install command to install all dependencies
-09. run npm start command to start web application
+08. run 'npm install' command to install all dependencies
+09. run 'npm start' command to start web application
 10. open SendEmail in Eclipse
 11. as step 03 make sure in MainClass.java file line 30, 31, 32 are same as mysql database
 12. To line 67 and 68 give email account username and email acoount password
 	Make sure that account Less Secure app access is on. url: https://myaccount.google.com/lesssecureapps
 12. Run MainClass as Java Application
+13. Open fireAlarmRMI in NetBeans IDE
+14. as step 03 make sure in RMIServer.java file line 191, 192, 193 are same as mysql database
+15. Run RMIServer then Run RMIClient
