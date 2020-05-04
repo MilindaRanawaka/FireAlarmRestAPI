@@ -22,3 +22,5 @@ To install Fire Alarm System,
 13. Open fireAlarmRMI in NetBeans IDE
 14. as step 03 make sure in RMIServer.java file line 191, 192, 193 are same as mysql database
 15. Run RMIServer then Run RMIClient
+
+//Add Other Details to Here and Delete This Comment
